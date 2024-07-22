@@ -12,13 +12,11 @@ const Form = (props: {
 
   const onHandleSubmit = async (event: any) => {
     event.preventDefault();
-    const tweetData = { user, content };
+    const tweetData = { user, content, likes: 0 };
     try {
       await axios.post("http://localhost:3001/tweets", tweetData);
       setUser(""); //RESETTA L'INPUT
       setContent(""); //RESETTA L'INPUT
-      console.log(tweetData);
-
       setTweetsData([...tweetsData, tweetData]); // AGGIORNA LA LISTA DEI TWEET DOPO IL POST
     } catch (error) {
       console.error("Errore nella chiamata POST:", error);
