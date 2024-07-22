@@ -6,25 +6,24 @@ let tweets = [];
 let tweetId = 1;
 
 // Caricamento dei tweet all'avvio del server
-// loadTweets()
-//   .then((data) => {
-//     tweets = data;
-//   })
-//   .catch((error) => {
-//     console.error("Error loading tweets:", error);
-//   });
+// const initializeTweets = async () => {
+//   try {
+//     const loadedTweets = await loadTweets();
+//     if (loadedTweets.length > 0) {
+//       tweetId = loadedTweets[loadedTweets.length - 1].id + 1;
+//     }
+//     tweets = loadedTweets;
+//     console.log("Tweets initialized:", tweets);
+//   } catch (error) {
+//     console.error("Error initializing tweets:", error);
+//   }
+// };
 
-const initializeTweets = async () => {
-  const tweets = await loadTweets();
-  if (tweets.length > 0) {
-    tweetId = tweets[tweets.length - 1].id + 1;
-  }
-  return tweets;
-};
+// initializeTweets();
 
-initializeTweets().then((loadedTweets) => {
-  tweets = loadedTweets;
-});
+// initializeTweets().then((loadedTweets) => {
+//   tweets = loadedTweets;
+// });
 
 // POST /tweets - AGGIUNGE UN TWEET
 router.post("/", async (req, res) => {

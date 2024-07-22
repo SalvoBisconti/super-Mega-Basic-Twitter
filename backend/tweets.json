@@ -3,6 +3,60 @@
     "id": 1,
     "content": "Ciao a tutti, oggi è un gran giorno per l'umanità",
     "user": "Salvo",
-    "likes": 44
+    "likes": 53
+  },
+  {
+    "id": 2,
+    "content": "Per la patria!",
+    "user": "Garibaldi",
+    "likes": 31
+  },
+  {
+    "id": 3,
+    "content": "a",
+    "user": "a",
+    "likes": 2
+  },
+  {
+    "id": 4,
+    "content": "aaa",
+    "user": "a",
+    "likes": 5
+  },
+  {
+    "id": 5,
+    "content": "sz",
+    "user": "s",
+    "likes": 7
+  },
+  {
+    "id": 6,
+    "content": "a",
+    "user": "a",
+    "likes": 5
+  },
+  {
+    "id": 7,
+    "content": "s",
+    "user": "ss",
+    "likes": 5
+  },
+  {
+    "id": 8,
+    "content": "a",
+    "user": "aa",
+    "likes": 2
+  },
+  {
+    "id": 9,
+    "content": "A",
+    "user": "<",
+    "likes": 0
+  },
+  {
+    "id": 10,
+    "content": "a",
+    "user": "a",
+    "likes": 0
   }
 ]

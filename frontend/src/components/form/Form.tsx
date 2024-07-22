@@ -17,6 +17,8 @@ const Form = (props: {
       await axios.post("http://localhost:3001/tweets", tweetData);
       setUser(""); //RESETTA L'INPUT
       setContent(""); //RESETTA L'INPUT
+      console.log(tweetData);
+
       setTweetsData([...tweetsData, tweetData]); // AGGIORNA LA LISTA DEI TWEET DOPO IL POST
     } catch (error) {
       console.error("Errore nella chiamata POST:", error);
@@ -26,7 +28,7 @@ const Form = (props: {
   return (
     <div className="border p-6 md:p-8 bg-white md:w-[450px] md:rounded md:border-white">
       <form className="flex flex-col gap-5" onSubmit={onHandleSubmit}>
-        <div className="flex gap-2 items-baseline">
+        <div className="flex flex-col gap-2 items-baseline">
           <label htmlFor="name">Nome utente:</label>
           <input
             type="text"

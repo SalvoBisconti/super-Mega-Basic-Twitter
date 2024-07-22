@@ -9,6 +9,10 @@ const TweetList = (props: {
 }) => {
   const { tweetsData, setTweetsData } = props;
 
+  useEffect(() => {
+    fetchTweets();
+  }, []);
+
   // PERMETTE L'AGGIORNAMENTO DOPO UN'ACTION
   const fetchTweets = async () => {
     try {
@@ -18,10 +22,6 @@ const TweetList = (props: {
       console.error("Errore nella fetch:", error);
     }
   };
-
-  useEffect(() => {
-    fetchTweets();
-  }, []);
 
   return (
     <div className="flex flex-col gap-4">
