@@ -1,4 +1,6 @@
-import { FaRegHeart } from "react-icons/fa";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { IoMdHeart } from "react-icons/io";
+
 import { tweetData } from "@/mocks/tweet";
 import axios from "axios";
 
@@ -16,7 +18,7 @@ const TweetElement = (props: { data: tweetData; fetchTweets: any }) => {
   };
 
   return (
-    <div className="border p-2 flex flex-col gap-2 md:h-fit md:w-[400px] md:rounded">
+    <div className="border p-2 flex flex-col  md:h-fit md:w-[400px] md:rounded">
       <div className="flex items-center gap-4">
         <img
           src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png"
@@ -27,14 +29,22 @@ const TweetElement = (props: { data: tweetData; fetchTweets: any }) => {
         />
         <h3 className="italic text-gray-500">@{data.user}</h3>
         <div className="flex flex-col items-center ml-auto ">
-          <FaRegHeart
-            className=" fill-azure cursor-pointer"
-            onClick={() => onHandleLike(data.id)}
-          />
+          {data.likes > 0 ? (
+            <IoMdHeart
+              className=" fill-azure cursor-pointer text-xl"
+              onClick={() => onHandleLike(data.id)}
+            />
+          ) : (
+            <IoMdHeartEmpty
+              className=" fill-azure cursor-pointer text-xl"
+              onClick={() => onHandleLike(data.id)}
+            />
+          )}
+
           <h4>{data.likes}</h4>
         </div>
       </div>
-      <p className="ml-20">{data.content}</p>
+      <p className="ml-20 pb-4">{data.content}</p>
     </div>
   );
 };

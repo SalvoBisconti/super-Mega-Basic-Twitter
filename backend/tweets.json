@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "id": 1,
+    "content": "Ciao a tutti, oggi è un gran giorno per l'umanità",
+    "user": "Salvo",
+    "likes": 44
+  }
+]

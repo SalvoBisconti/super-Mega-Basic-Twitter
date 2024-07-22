@@ -47,7 +47,7 @@ const Form = (props: {
             rows={3}
             cols={50}
             placeholder="Scrivi qui il tuo tweet"
-            className=" p-2 rounded focus:shadow-sm outline-none focus:shadow-azure  "
+            className=" p-2 rounded focus:shadow-sm outline-none focus:shadow-azure border  "
             onChange={(e) => setContent(e.target.value)}
             value={content}
           ></textarea>

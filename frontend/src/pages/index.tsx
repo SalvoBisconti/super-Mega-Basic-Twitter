@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col gap-4">
-      <section className="h-[400px] bg-azure flex flex-col gap-10  md:items-center">
+      <section className="h-[450px] bg-azure flex flex-col gap-10  md:items-center">
         <h1 className="font-bold text-white text-3xl pt-2 text-center">
           Super Mega Basic Twitter
           <FaTwitter className="inline ml-2" />

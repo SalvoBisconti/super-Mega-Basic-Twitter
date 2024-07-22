@@ -1,6 +1,6 @@
 # super-Mega-Basic-Twitter
 
-**Super Mega Basic Twitter** è una semplice applicazione web che simula alcune delle funzionalità di base di Twitter. Permette agli utenti di pubblicare tweet, visualizzare tutti i tweet e incrementare il numero di "mi piace" sui tweet esistenti. Il progetto è composto da un backend costruito con Node.js e Express e un frontend realizzato con React.
+**Super Mega Basic Twitter** è una semplice applicazione web che simula alcune delle funzionalità di base di Twitter. Permette agli utenti di pubblicare tweet, visualizzare tutti i tweet e incrementare il numero di "mi piace" sui tweet esistenti. Il progetto è composto da un backend costruito con Node.js e Express e un frontend realizzato il framework Next.js.
 
 ## Funzionalità
 
@@ -23,8 +23,8 @@
 
 ## Struttura del Progetto
 
-- **backend/**: Contiene il codice sorgente per il server Node.js e le API.
-- **frontend/**: Contiene il codice sorgente per l'interfaccia utente in React.
+- **backend**: Contiene il codice sorgente per il server Node.js e le API.
+- **frontend**: Contiene il codice sorgente per l'interfaccia utente in React.
 
 ## Setup e Avvio
 
