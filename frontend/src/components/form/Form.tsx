@@ -3,13 +3,13 @@ import axios from "axios";
 import { Dispatch, useState } from "react";
 
 const Form = (props: {
-  tweetsData: tweetData[];
   setTweetsData: Dispatch<React.SetStateAction<any>>;
 }) => {
-  const { tweetsData, setTweetsData } = props;
+  const { setTweetsData } = props;
   const [user, setUser] = useState<string>("");
   const [content, setContent] = useState<string>("");
 
+  // POST DEL TWEET
   const onHandleSubmit = async (event: any) => {
     event.preventDefault();
     const tweetData = { user, content, likes: 0 };
@@ -17,7 +17,10 @@ const Form = (props: {
       await axios.post("http://localhost:3001/tweets", tweetData);
       setUser(""); //RESETTA L'INPUT
       setContent(""); //RESETTA L'INPUT
-      setTweetsData([...tweetsData, tweetData]); // AGGIORNA LA LISTA DEI TWEET DOPO IL POST
+
+      // AGGIORNARE LA LISTA SENZA INTOPPI CON IL BACKEND
+      const response = await axios.get("http://localhost:3001/tweets");
+      setTweetsData(response.data);
     } catch (error) {
       console.error("Errore nella chiamata POST:", error);
     }

@@ -7,6 +7,7 @@ import axios from "axios";
 const TweetElement = (props: { data: tweetData; fetchTweets: any }) => {
   const { data, fetchTweets } = props;
 
+  //FUNZIONE INCREMENTO LIKES
   const onHandleLike = async (id: number) => {
     try {
       await axios.post(`http://localhost:3001/tweets/${id}/like`);

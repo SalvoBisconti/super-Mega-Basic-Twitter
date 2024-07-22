@@ -14,7 +14,7 @@ export default function Home() {
           Super Mega Basic Twitter
           <FaTwitter className="inline ml-2" />
         </h1>
-        <Form tweetsData={tweetsData} setTweetsData={setTweetsData} />
+        <Form setTweetsData={setTweetsData} />
       </section>
       <TweetList tweetsData={tweetsData} setTweetsData={setTweetsData} />
     </main>

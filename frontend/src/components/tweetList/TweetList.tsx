@@ -22,6 +22,7 @@ const TweetList = (props: {
       console.error("Errore nella fetch:", error);
     }
   };
+  console.log(tweetsData);
 
   return (
     <div className="flex flex-col gap-4">
@@ -29,13 +30,14 @@ const TweetList = (props: {
         Scopri tutti i tweet
       </h2>
       <div className="flex flex-col justify-center md:flex-row md:flex-wrap md:gap-4">
-        {tweetsData.map((element) => (
-          <TweetElement
-            data={element}
-            key={element.id}
-            fetchTweets={fetchTweets}
-          />
-        ))}
+        {tweetsData.length > 0 &&
+          tweetsData.map((element) => (
+            <TweetElement
+              data={element}
+              key={element.id}
+              fetchTweets={fetchTweets}
+            />
+          ))}
       </div>
     </div>
   );
