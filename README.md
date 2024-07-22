@@ -167,3 +167,8 @@ Questa sezione documenta le API disponibili nel backend dell'applicazione. Le AP
   ```
 
   ```
+
+  ## File tweets.json
+
+  Il file tweets.json memorizza i tweet in modo persistente. Questo file deve essere creato nella directory backend/data e deve avere il formato JSON corretto.
+  Permette dunque il salvataggio dei dati derivanti dai metodi HTTP in locale.
