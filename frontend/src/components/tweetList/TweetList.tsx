@@ -9,10 +9,6 @@ const TweetList = (props: {
 }) => {
   const { tweetsData, setTweetsData } = props;
 
-  useEffect(() => {
-    fetchTweets();
-  }, []);
-
   // PERMETTE L'AGGIORNAMENTO DOPO UN'ACTION
   const fetchTweets = async () => {
     try {
@@ -23,9 +19,15 @@ const TweetList = (props: {
     }
   };
 
+  useEffect(() => {
+    fetchTweets();
+  }, []);
+
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="font-bold text-azure text-xl pl-2">Tweet più recenti</h2>
+      <h2 className="font-bold text-azure text-xl pl-2">
+        Scopri tutti i tweet
+      </h2>
       <div className="flex flex-col justify-center md:flex-row md:flex-wrap md:gap-4">
         {tweetsData.map((element) => (
           <TweetElement

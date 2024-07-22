@@ -48,7 +48,7 @@ router.get("/", (req, res) => {
 // POST /tweets/:id/like - INCREMENTA I NUMERO DI LIKE DOPO AVER VERIFICATO CHE IL L'ID DEL TWEET SI TROVA NELL'ARRAY
 router.post("/:id/like", async (req, res) => {
   try {
-    const tweetId = parseInt(req.params);
+    const tweetId = parseInt(req.params.id, 10);
     const tweet = tweets.find((t) => t.id === tweetId);
 
     if (tweet) {

@@ -11,6 +11,7 @@ const TweetElement = (props: { data: tweetData; fetchTweets: any }) => {
       fetchTweets();
     } catch (error) {
       console.error("Errore nella post dei likes:", error);
+      console.log(id);
     }
   };
 
