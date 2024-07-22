@@ -5,25 +5,26 @@ const { loadTweets, saveTweets } = require("../utils/fileHandler");
 let tweets = [];
 let tweetId = 1;
 
-// Caricamento dei tweet all'avvio del server
-// const initializeTweets = async () => {
-//   try {
-//     const loadedTweets = await loadTweets();
-//     if (loadedTweets.length > 0) {
-//       tweetId = loadedTweets[loadedTweets.length - 1].id + 1;
-//     }
-//     tweets = loadedTweets;
-//     console.log("Tweets initialized:", tweets);
-//   } catch (error) {
-//     console.error("Error initializing tweets:", error);
-//   }
-// };
+// CARICAMENTO ARRAY ALL'AVVIO DELL'APP
+const initializeTweets = async () => {
+  try {
+    const loadedTweets = await loadTweets();
+    if (loadedTweets.length > 0) {
+      tweetId = loadedTweets[loadedTweets.length - 1].id + 1;
+    }
+    tweets = loadedTweets;
+    console.log("Tweets initialized:", tweets);
+  } catch (error) {
+    console.error("Error initializing tweets:", error);
+  }
+};
 
-// initializeTweets();
+initializeTweets();
 
-// initializeTweets().then((loadedTweets) => {
-//   tweets = loadedTweets;
-// });
+// SALVATAGGIO IN REAL TIME NEL FILE TWEETS.JSON
+initializeTweets().then((loadedTweets) => {
+  tweets = loadedTweets;
+});
 
 // POST /tweets - AGGIUNGE UN TWEET
 router.post("/", async (req, res) => {
