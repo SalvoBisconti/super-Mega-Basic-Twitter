@@ -4,7 +4,7 @@
 Il progetto è composto da un backend costruito con Node.js ed Express e un frontend realizzato con il framework Next.js.
 Per la parte frontend il linguaggio di programmazione utilizzato è stato TypeScript in modo da avere un primo controllo del codice già in fase di scrittura.
 Per la gestione delle richieste HTTP è stata utilizzata la libreria Axios. La scelta è motivata dalla facilità di utilizzo e dalla leggerezza della libreria stessa.
-Per la parte di stile la scelta è ricaduta sul framework CSS Tailwind , scelta dovuta soprattutto alla suo livello di personalizzazione e alla velocità di scrittura.
+Per la parte di styling la scelta è ricaduta sul framework CSS Tailwind, scelta dovuta soprattutto al suo livello di personalizzazione e alla velocità di stesura del codice.
 
 ## Funzionalità
 
