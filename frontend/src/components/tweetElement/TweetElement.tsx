@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FaRegHeart } from "react-icons/fa";
 import { tweetData } from "@/mocks/tweet";
 import axios from "axios";
@@ -8,11 +7,10 @@ const TweetElement = (props: { data: tweetData; fetchTweets: any }) => {
 
   const onHandleLike = async (id: number) => {
     try {
-      await axios.post(`http://localhost:3000/tweets/${id}/like`);
+      await axios.post(`http://localhost:3001/tweets/${id}/like`);
       fetchTweets();
     } catch (error) {
-      console.error("Error liking tweet:", error);
-      console.log(id);
+      console.error("Errore nella post dei likes:", error);
     }
   };
 

@@ -1,15 +1,19 @@
 import TweetElement from "../tweetElement";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect, Dispatch } from "react";
 import { tweetData } from "@/mocks/tweet";
 
-const TweetList = () => {
-  const [tweetsData, setTweetsData] = useState<tweetData[]>([]);
+const TweetList = (props: {
+  tweetsData: tweetData[];
+  setTweetsData: Dispatch<React.SetStateAction<any>>;
+}) => {
+  const { tweetsData, setTweetsData } = props;
 
   useEffect(() => {
     fetchTweets();
   }, []);
 
+  // PERMETTE L'AGGIORNAMENTO DOPO UN'ACTION
   const fetchTweets = async () => {
     try {
       const response = await axios.get("http://localhost:3001/tweets");
@@ -18,17 +22,6 @@ const TweetList = () => {
       console.error("Errore nella fetch:", error);
     }
   };
-
-  // const onHandleLike = async (id: any) => {
-  //   try {
-  //     await axios.post(`http://localhost:3000/tweets/${id}/like`);
-  //     fetchTweets();
-  //   } catch (error) {
-  //     console.error('Error liking tweet:', error);
-  //   }
-  // };
-
-  console.log(tweetsData);
 
   return (
     <div className="flex flex-col gap-4">

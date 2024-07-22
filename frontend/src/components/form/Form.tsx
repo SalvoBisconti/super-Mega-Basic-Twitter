@@ -1,33 +1,27 @@
+import { tweetData } from "@/mocks/tweet";
 import axios from "axios";
-import { useState } from "react";
+import { Dispatch, useState } from "react";
 
-const Form = () => {
-  // const [content, setContent] = useState<{}>({
-  //   user: "",
-  //   content: "",
-  // });
-  const [user, setUser] = useState("");
-  const [content, setContent] = useState("");
+const Form = (props: {
+  tweetsData: tweetData[];
+  setTweetsData: Dispatch<React.SetStateAction<any>>;
+}) => {
+  const { tweetsData, setTweetsData } = props;
+  const [user, setUser] = useState<string>("");
+  const [content, setContent] = useState<string>("");
 
   const onHandleSubmit = async (event: any) => {
     event.preventDefault();
     const tweetData = { user, content };
     try {
       await axios.post("http://localhost:3001/tweets", tweetData);
-      // setContent({ id: 0, user: "", content: "" });
-      setUser("");
-      setContent("");
-      // onAdd();
-      console.log("inviato," + tweetData);
+      setUser(""); //RESETTA L'INPUT
+      setContent(""); //RESETTA L'INPUT
+      setTweetsData([...tweetsData, tweetData]); // AGGIORNA LA LISTA DEI TWEET DOPO IL POST
     } catch (error) {
       console.error("Errore nella chiamata POST:", error);
     }
   };
-
-  // const onHandleChange = (event: any) => {
-  //   const { name, value } = event.target;
-  //   setContent({ ...content, [name]: value });
-  // };
 
   return (
     <div className="border p-6 md:p-8 bg-white md:w-[450px] md:rounded md:border-white">
@@ -39,7 +33,7 @@ const Form = () => {
             name="name"
             id="name"
             required
-            className="border outline-none px-2 py-1"
+            className="border rounded focus:shadow-sm focus:shadow-azure outline-none px-2 py-1"
             onChange={(e) => setUser(e.target.value)}
             value={user}
           />
@@ -53,7 +47,7 @@ const Form = () => {
             rows={3}
             cols={50}
             placeholder="Scrivi qui il tuo tweet"
-            className=" focus:outline-azure "
+            className=" p-2 rounded focus:shadow-sm outline-none focus:shadow-azure  "
             onChange={(e) => setContent(e.target.value)}
             value={content}
           ></textarea>

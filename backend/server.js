@@ -6,7 +6,7 @@ const tweetRoutes = require("./routes/tweets");
 const app = express();
 const PORT = 3001;
 
-app.use(cors()); // Usa il middleware cors
+app.use(cors()); // USA IL MIDDLEWARE CORS
 app.use(bodyParser.json());
 app.use("/tweets", tweetRoutes);
 

@@ -26,7 +26,7 @@ initializeTweets().then((loadedTweets) => {
   tweets = loadedTweets;
 });
 
-// POST /tweets - Permette di pubblicare un nuovo tweet
+// POST /tweets - AGGIUNGE UN TWEET
 router.post("/", async (req, res) => {
   const { content, user } = req.body;
   const newTweet = {
@@ -40,12 +40,12 @@ router.post("/", async (req, res) => {
   res.status(201).json(newTweet);
 });
 
-// GET /tweets - Ritorna tutti i tweet esistenti
+// GET /tweets - RESTITUISCE I TWEET
 router.get("/", (req, res) => {
   res.status(200).json(tweets);
 });
 
-// POST /tweets/:id/like - Incrementa il contatore di "mi piace" per un tweet specifico
+// POST /tweets/:id/like - INCREMENTA I NUMERO DI LIKE DOPO AVER VERIFICATO CHE IL L'ID DEL TWEET SI TROVA NELL'ARRAY
 router.post("/:id/like", async (req, res) => {
   try {
     const tweetId = parseInt(req.params);
