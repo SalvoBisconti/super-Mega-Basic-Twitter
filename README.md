@@ -1,6 +1,8 @@
-# super-Mega-Basic-Twitter
+# Super Mega Basic Twitter
 
-**Super Mega Basic Twitter** è una semplice applicazione web che simula alcune delle funzionalità di base di Twitter. Permette agli utenti di pubblicare tweet, visualizzare tutti i tweet e incrementare il numero di mi piace sui tweet esistenti. Il progetto è composto da un backend costruito con Node.js e Express e un frontend realizzato con il framework Next.js.
+**Super Mega Basic Twitter** è una semplice applicazione web che simula alcune delle funzionalità di base di Twitter. Permette agli utenti di pubblicare tweet, visualizzare tutti i tweet e incrementare il numero di mi piace sui tweet esistenti.
+Il progetto è composto da un backend costruito con Node.js ed Express e un frontend realizzato con il framework Next.js.
+Per la parte frontend il linguaggio di programmazione utilizzato è stato TypeScript in modo da avere un primo controllo del codice già in fase di scrittura.
 Per la gestione delle richieste HTTP è stata utilizzata la libreria Axios. La scelta è motivata dalla facilità di utilizzo e dalla leggerezza della libreria stessa.
 Per la parte di stile la scelta è ricaduta sul framework CSS Tailwind , scelta dovuta soprattutto alla suo livello di personalizzazione e alla velocità di scrittura.
 
@@ -19,7 +21,7 @@ Per la parte di stile la scelta è ricaduta sul framework CSS Tailwind , scelta 
   - File System per la persistenza dei dati
 
 - **Frontend:**
-  - React
+  - Next.js
   - Axios per le richieste HTTP
   - Tailwind CSS per lo styling
 
@@ -70,7 +72,7 @@ Per la parte di stile la scelta è ricaduta sul framework CSS Tailwind , scelta 
    npm run dev
    ```
 
-   L'app React sarà accessibile su http://localhost:3000.
+   L'app Next sarà accessibile su http://localhost:3000.
 
    ## API Endpoints
 
@@ -138,7 +140,7 @@ Questa sezione documenta le API disponibili nel backend dell'applicazione. Le AP
 - **Descrizione:** Incrementa il numero di "mi piace" per un tweet specifico.
 - **Metodo:** POST
 - **URL:** `http://localhost:3001/tweets/:id/like`
-- **Parametri dell'URL:** `id (numero): L'ID del tweet per cui incrementare i "mi piace".`
+- **Parametri dell'URL:** `id (numero): L'ID del tweet per cui incrementare i mi piace.`
 - **Risposta:**
 
   ```json
@@ -161,4 +163,4 @@ Questa sezione documenta le API disponibili nel backend dell'applicazione. Le AP
 
   Il file tweets.json memorizza i tweet in modo persistente. Questo file deve essere creato nella directory backend/data e deve avere il formato JSON corretto.
   Permette dunque il salvataggio dei dati derivanti dai metodi HTTP in locale.
-  Per far tutto ciò è stato utilizzato il pacchetto 'fs-extra'.
+  Per far tutto ciò è stato utilizzato il pacchetto File System ('fs-extra').
