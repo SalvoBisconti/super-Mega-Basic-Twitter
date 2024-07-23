@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3001;
 
 const corsOptions = {
-  origin: "https://super-mega-basic-twitter-backend.vercel.app", // Sostituisci con il dominio del tuo front-end
+  origin: "https://super-mega-basic-twitter.vercel.app", // Sostituisci con il dominio del tuo front-end
   optionsSuccessStatus: 200,
 };
 
