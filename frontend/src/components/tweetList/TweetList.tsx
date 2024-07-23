@@ -2,6 +2,7 @@ import TweetElement from "../tweetElement";
 import axios from "axios";
 import { useEffect, Dispatch } from "react";
 import { tweetData } from "@/mocks/tweet";
+import { BASE_URL } from "../../../utils/https";
 
 const TweetList = (props: {
   tweetsData: tweetData[];
@@ -16,7 +17,7 @@ const TweetList = (props: {
   // PERMETTE L'AGGIORNAMENTO DOPO UN'ACTION
   const fetchTweets = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/tweets");
+      const response = await axios.get(`${BASE_URL}/tweets`);
       setTweetsData(response.data);
     } catch (error) {
       console.error("Errore nella fetch:", error);

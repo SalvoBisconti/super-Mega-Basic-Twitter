@@ -1,4 +1,4 @@
-import { tweetData } from "@/mocks/tweet";
+import { BASE_URL } from "../../../utils/https";
 import axios from "axios";
 import { Dispatch, useState } from "react";
 
@@ -14,12 +14,12 @@ const Form = (props: {
     event.preventDefault();
     const tweetData = { user, content, likes: 0 };
     try {
-      await axios.post("http://localhost:3001/tweets", tweetData);
+      await axios.post(`${BASE_URL}/tweets`, tweetData);
       setUser(""); //RESETTA L'INPUT
       setContent(""); //RESETTA L'INPUT
 
       // AGGIORNARE LA LISTA SENZA INTOPPI CON IL BACKEND
-      const response = await axios.get("http://localhost:3001/tweets");
+      const response = await axios.get(`${BASE_URL}/tweets`);
       setTweetsData(response.data);
     } catch (error) {
       console.error("Errore nella chiamata POST:", error);

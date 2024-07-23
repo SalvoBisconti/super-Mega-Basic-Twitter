@@ -3,6 +3,7 @@ import { IoMdHeart } from "react-icons/io";
 import Image from "next/image";
 import { tweetData } from "@/mocks/tweet";
 import axios from "axios";
+import { BASE_URL } from "../../../utils/https";
 
 const TweetElement = (props: { data: tweetData; fetchTweets: any }) => {
   const { data, fetchTweets } = props;
@@ -10,7 +11,7 @@ const TweetElement = (props: { data: tweetData; fetchTweets: any }) => {
   //FUNZIONE INCREMENTO LIKES
   const onHandleLike = async (id: number) => {
     try {
-      await axios.post(`http://localhost:3001/tweets/${id}/like`);
+      await axios.post(`${BASE_URL}/tweets/${id}/like`);
       fetchTweets();
     } catch (error) {
       console.error("Errore nella post dei likes:", error);
