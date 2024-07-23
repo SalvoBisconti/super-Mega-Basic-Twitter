@@ -18,7 +18,7 @@ const TweetList = (props: {
   const fetchTweets = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/tweets`);
-      setTweetsData(response.data);
+      setTweetsData(response.data.reverse());
     } catch (error) {
       console.error("Errore nella fetch:", error);
     }
