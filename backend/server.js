@@ -13,3 +13,5 @@ app.use("/tweets", tweetRoutes);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+module.exports = app;
