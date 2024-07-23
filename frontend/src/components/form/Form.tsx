@@ -20,7 +20,7 @@ const Form = (props: {
 
       // AGGIORNARE LA LISTA SENZA INTOPPI CON IL BACKEND
       const response = await axios.get(`${BASE_URL}/tweets`);
-      setTweetsData(response.data);
+      setTweetsData(response.data.reverse());
     } catch (error) {
       console.error("Errore nella chiamata POST:", error);
     }
