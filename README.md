@@ -49,7 +49,7 @@ Per la parte di styling la scelta è ricaduta sul framework CSS Tailwind, scelta
 2. **Avvia il server:**
 
    ```bash
-   npm start
+   node index.js
    ```
 
 ### Frontend
