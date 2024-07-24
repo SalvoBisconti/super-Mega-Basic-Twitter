@@ -82,7 +82,7 @@ Questa sezione documenta le API disponibili nel backend dell'applicazione. Le AP
 
 - **Descrizione:** Recupera tutti i tweet esistenti.
 - **Metodo:** GET
-- **URL:** `http://localhost:3001/tweets`
+- **URL:** `https://super-mega-basic-twitter-backend.vercel.app/tweets`
 - **Risposta:**
 
   ```json
@@ -106,7 +106,7 @@ Questa sezione documenta le API disponibili nel backend dell'applicazione. Le AP
 
 - **Descrizione:** Crea un nuovo tweet.
 - **Metodo:** POST
-- **URL:** `http://localhost:3001/tweets`
+- **URL:** `https://super-mega-basic-twitter-backend.vercel.app/tweets`
 - **Corpo della Richiesta:**
 
   ```json
@@ -139,7 +139,7 @@ Questa sezione documenta le API disponibili nel backend dell'applicazione. Le AP
 
 - **Descrizione:** Incrementa il numero di "mi piace" per un tweet specifico.
 - **Metodo:** POST
-- **URL:** `http://localhost:3001/tweets/:id/like`
+- **URL:** `https://super-mega-basic-twitter-backend.vercel.app/tweets/:id/like`
 - **Parametri dell'URL:** `id (numero): L'ID del tweet per cui incrementare i mi piace.`
 - **Risposta:**
 
